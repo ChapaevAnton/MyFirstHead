@@ -23,12 +23,14 @@ public class WorkoutDetailFragment extends Fragment {
         if (view != null) {
             TextView title = (TextView) view.findViewById(R.id.title);
             TextView description = (TextView) view.findViewById(R.id.description);
-            WorkOut.setWorkOuts();
+
             try {
 
                 WorkOut workOut = WorkOut.workOut[(int) workoutId];
+
                 title.setText(workOut.getName());
                 description.setText(workOut.getDescription());
+
             } catch (ArrayIndexOutOfBoundsException e) {
                 Log.d(TAG, "onStart: "+e);
             }
