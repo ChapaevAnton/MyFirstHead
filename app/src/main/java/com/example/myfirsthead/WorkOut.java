@@ -1,0 +1,53 @@
+package com.example.myfirsthead;
+
+
+import android.util.Log;
+
+
+public class WorkOut {
+    private static final String TAG ="TAG" ;
+    private String name;
+    private String description;
+    public static WorkOut[] workOut;
+
+
+    private final static String mas_name[] = {"Автомобиль", "Мотоцикл", "Велосипед", "Лодка"};
+    private final static String mas_description[] = {"Быстрый ", "Громкий", "Удобный"};
+
+
+    private WorkOut(String name, String description) {
+        this.name = name;
+        this.description = description;
+    }
+
+    //OPTIMIZE: Переработать иницилизацию и цикл
+    public static void setWorkOuts() {
+        WorkOut workOuts[] = new WorkOut[mas_name.length];
+        for (int i = 0; i < workOuts.length; i++) {
+            try {
+                workOuts[i] = new WorkOut(mas_name[i], mas_description[i]);
+            }catch (ArrayIndexOutOfBoundsException e){
+
+                workOuts[i]=new WorkOut("title","description");;
+                Log.d(TAG, "setWorkOuts: workOuts["+i+"]->"+workOuts[i]);
+                Log.d(TAG, "setWorkOuts:"+e);
+            }
+        }
+        workOut=workOuts;
+    }
+
+
+
+    public String getName() {
+        return name;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    @Override
+    public String toString() {
+        return this.name;
+    }
+}
