@@ -30,6 +30,7 @@ public class WorkOut {
     //region set
     //OPTIMIZE: Переработать иницилизацию и цикл
     // - добавил только конструктор WorkOut() в обработку исключения
+
     public static void setWorkOuts() {
         WorkOut[] workOuts = new WorkOut[mas_name.length];
         for (int i = 0; i < workOuts.length; i++) {
