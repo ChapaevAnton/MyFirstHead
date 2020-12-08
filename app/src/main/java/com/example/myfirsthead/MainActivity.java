@@ -16,6 +16,7 @@ public class MainActivity extends AppCompatActivity implements WorkoutListFragme
 
     }
 
+    //TODO Отображение в зависимости от устройства планшет или смартфон
 
     /**
      * @param id идентификатор выбранной позиции в списке
